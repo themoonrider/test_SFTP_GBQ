@@ -81,7 +81,7 @@ def to_bg(args,decrypted_file):
     path=os.path.join("./",str(decrypted_file))
    # print(path)
     df=pd.read_csv(path,skipfooter=1,skip_blank_lines=True,on_bad_lines='skip',engine='python',encoding='latin-1')
-    df.to_gbq(project_id+".etl."+file.replace('TFP_ETL_',''),project_id=project_id,if_exists='replace',credentials=bq_credentials)
+    df.to_gbq(project_id+".etl."+file.replace('ETL_',''),project_id=project_id,if_exists='replace',credentials=bq_credentials)
     
     print("Finish uploading to BigQuery: "+file)
 
